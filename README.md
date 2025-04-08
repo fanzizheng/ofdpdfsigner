@@ -9,7 +9,9 @@
         pdf -》 png
         pdf -》 jpeg
         pdf -》 svg
-        
+跨平台支持 ： windows，linux，macos。
+移动端支持 ： ios，android，鸿蒙系统。
+开发语言为C++，提供 C++接口、java接口（JNI接口，android 和 java语言），TS接口(鸿蒙系统)，swift接口（ios系统）.
 
 ## 📜 许可证
 本项目根据**商业源代码许可证1.1（BSL-1.1）**获得许可。
