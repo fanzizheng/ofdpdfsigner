@@ -5,7 +5,6 @@
         ofd -》 png
         ofd -》 jpeg
         ofd -》 svg
-
         pdf -》 ofd
         pdf -》 png
         pdf -》 jpeg
