@@ -35,11 +35,6 @@
 如果您打算在商业环境中使用此项目（例如：内部业务工具、面向客户的产品、付费服务等），您必须获得商业许可证。
 📧 电子邮件：[fanzizheng20120505@163.com]（邮寄至：fanzizheng20120505@163.com)
 
-## 📚 文档
-即将推出/[链接到文档]
----
-## 🙌 捐助
-我们欢迎非商业用户的贡献。有关详细信息，请参阅[`CONTRIBUTING.md']（./CONCIUTING.md）。
 ---
 ## 🧾 许可证徽章
 ！[许可证：BSL-1.1](https://img.shields.io/badge/license-BSL--1.1-blue)
