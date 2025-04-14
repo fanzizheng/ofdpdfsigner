@@ -1,5 +1,5 @@
 ofdpdfsigner  
-A powerful OFD/PDF signing tool that supports format conversion, document encryption, and integrity protection.  
+A powerful OFD/PDF signing tool that supports format conversion, document encryption,electronic signature, digital seal, and integrity protection.  
 
 ✍️ Signature Features:  
 Electronic Seal : Supports electronic seals by position, across pages (seam stamps), and by keyword for both OFD and PDF formats.  
