@@ -1,85 +1,42 @@
-ofdpdfsigner  
-A powerful OFD/PDF signing tool that supports format conversion, document encryption,electronic signature, digital seal, and integrity protection.  
+# ofdpdfsigner
+功能强大的 ofd/pdf 签章工具，支持格式互转，支持文档加密及完整性保护。
 
-✍️ Signature Features:  
-Electronic Seal : Supports electronic seals by position, across pages (seam stamps), and by keyword for both OFD and PDF formats.  
+签章支持：ofd/pdf 位置盖章、骑缝章、关键字盖章。  
+文档加密：pdf 支持pdf标准的文档加密  
+            ofd 支持国标文档加密  
+完整性保护：ofd 支持国标完整性保护  
+加密及签名算法：  
+        支持 SM2、SM3、SM4，可以通过回调函数支持 Ukey 、加密机 及 在移动端使用 二级密码模块。  
+开发标准：  
+        C0119国家政务服务平台统一电子印章签章技术要求  
+        GB∕T 38540-2020 信息安全技术 安全电子签章密码技术规范  
+        GBT_33190-2016_电子文件存储与交换格式版式文档  
+        GM/T 0099-2020开放式版式文档密码应用技术规范  
+        GMT_0031-2014_安全电子签章密码技术规范  
+转换支持：  
+        ofd -》 pdf  
+        ofd -》 png  
+        ofd -》 jpeg  
+        ofd -》 svg  
+        pdf -》 ofd  
+        pdf -》 png  
+        pdf -》 jpeg  
+        pdf -》 svg  
+跨平台支持 ： windows，linux，macos。  
+移动端支持 ： ios，android，鸿蒙系统。  
+开发语言为C++，提供 C 接口、java接口（JNI接口，android 和 java语言），TS接口(鸿蒙系统)，swift接口（ios系统）.  
 
-Document Encryption:  
+您有任何需求或建议，都可以联系我：fzzfzz2025@163.com。
 
-PDF: Supports standard PDF document encryption.  
+## 📜 许可证
+本项目根据**商业源代码许可证1.1（BSL-1.1）**获得许可。
+- ✅ 个人、教育和非商业用途免费
+- ❌ 商业或生产用途**需要商业许可证**
+您可以在[“许可证”]（./license）文件中阅读完整的许可条款。
+## 💼 商业许可
+如果您打算在商业环境中使用此项目（例如：内部业务工具、面向客户的产品、付费服务等），您必须获得商业许可证。
+📧 电子邮件：[fzzfzz2025@163.com。]（邮寄至：fzzfzz2025@163.com。)
 
-OFD: Supports national standard (China) document encryption.  
-
-Integrity Protection:  
-
-OFD: Supports integrity protection based on Chinese national standards.  
-
-Encryption & Signature Algorithms:  
-
-Supports SM2, SM3, SM4 algorithms.  
-
-Supports integration with Ukey, hardware cryptographic modules, and mobile-side secondary password modules via callback functions.  
-
-🧑‍💻 Development Standards:  
-C0119: Unified eSeal technical requirements for the National Government Service Platform  
-
-GB/T 38540-2020: Information Security Technology — Cryptographic Technical Specifications for Secure Electronic Signatures  
-
-GBT 33190-2016: Format Document for Electronic Document Storage and Exchange  
-
-GM/T 0099-2020: Technical Specifications for Cryptographic Application in OFD Format Documents  
-
-GM/T 0031-2014: Cryptographic Technical Specifications for Secure Electronic Signatures  
-
-🔄 Format Conversion Support:  
-OFD ➝ PDF  
-
-OFD ➝ PNG  
-
-OFD ➝ JPEG  
-
-OFD ➝ SVG  
-
-PDF ➝ OFD  
-
-PDF ➝ PNG  
-
-PDF ➝ JPEG  
-
-PDF ➝ SVG  
-
-🖥️ Cross-Platform Support:  
-Desktop: Windows, Linux, macOS  
-
-Mobile: iOS, Android, HarmonyOS  
-
-🧱 Development Language:  
-Core: C++  
-
-Interfaces provided:  
-
-C Interface  
-
-Java Interface (JNI for Android and Java)  
-
-TypeScript Interface (for HarmonyOS)  
-
-Swift Interface (for iOS)  
-
-📬 Contact  
-For any needs or suggestions, feel free to reach out: fzzfzz2025@163.com  
-
-📜 License  
-This project is licensed under the Business Source License 1.1 (BSL-1.1).  
-
-✅ Free for personal, educational, and non-commercial use  
-❌ Commercial or production use requires a commercial license  
-
-You can read the full license terms in the LICENSE file.  
-
-💼 Commercial License  
-If you intend to use this project in a commercial environment (e.g., internal business tools, customer-facing products, paid services, etc.), you must obtain a commercial license.
-📧 Email: fzzfzz2025@163.com  
-
-🧾 License Badge  
-License: BSL-1.1  
+---
+## 🧾 许可证徽章
+！[许可证：BSL-1.1](https://img.shields.io/badge/license-BSL--1.1-blue)
