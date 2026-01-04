@@ -1,0 +1,34 @@
+{
+"default":"simsun.ttf",
+"clipmaxlen":409600,
+"fonstlist":[
+	{
+		"filename":"simsun.ttf",
+		"fontname":"SimSun",
+		"isClip":true,
+		"aliases":["宋体"],
+		"contain":[]
+	},
+	{
+		"filename":"simkai.ttf",
+		"fontname":"KaiTi",
+		"isClip":true,
+		"aliases":["楷体"],
+		"contain":[["simkai"],["KaiTi"]]
+	},
+	{
+		"filename":"simfang.ttf",
+		"fontname":"FangSong",
+		"isClip":true,
+		"aliases":[],
+		"contain":[["仿宋"]]
+	},
+	{
+		"filename":"simhei.ttf",
+		"fontname":"simhei",
+		"isClip":true,
+		"aliases":["黑体"],
+		"contain":[]
+	}
+]
+}
