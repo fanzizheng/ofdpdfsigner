@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery.js" charset="utf-8"></script>
+    <script>
+
+        function testswxa()
+        {
+            //获取当前文档
+            var jsondata = new Object();
+            jsondata.fileID = "";
+            $.ajax({
+                type:"GET",
+                async:false,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                url:"http://127.0.0.1:7655/test/test_swxa",
+                beforeSend:function(){},
+                complete:function(){},
+                success:function (data) {
+                    if ( data.status == 0 ) {
+                        alert("打印成功！");
+
+
+                    } else {
+
+                        alert(data.message);
+                    }
+
+
+                } ,error:function (XMLHttpRequest, textStatus, errorThrown) {
+
+                    hideprogress();
+                    alert(XMLHttpRequest.status);
+                    alert(XMLHttpRequest.readyState);
+                    alert(textStatus);
+                    alert(errorThrown);
+
+                }
+            });
+
+        }
+		    
+		</script>
+</head>
+<body >
+	
+<style>
+	  
+    #div1 {
+    	  left:0px;
+    	  top:50px;
+        width: 100%;
+        height: 100%;
+        background-color:#FFFFFF;
+        
+    }
+    
+    html{
+    height:100%;
+		}
+		body{
+    height:94%;
+		}
+		
+
+
+</style>
+<input type="button" name="button" value="测试三未kms" onclick="testswxa()">
+
+<br/>
+<div id="div1" class=".div1" ></div>
+
+</body>
+</html>
