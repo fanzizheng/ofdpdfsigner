@@ -24,7 +24,7 @@
         pdf -》 svg  
 跨平台支持 ： windows，linux，macos。  
 移动端支持 ： ios，android，鸿蒙系统。  
-开发语言为C++，提供 C 接口、java接口（JNI接口，android 和 java语言），TS接口(鸿蒙系统)，swift接口（ios系统）.  
+开发语言为C++，提供 C 接口、java接口（JNI接口，android 和 java语言），TS接口(鸿蒙系统)，swift接口（objc 使用 swift接口）.   
 
 您有任何需求或建议，都可以联系我：fzzfzz2025@163.com。
 
