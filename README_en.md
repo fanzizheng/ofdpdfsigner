@@ -83,3 +83,35 @@ If you intend to use this project in a commercial environment (e.g., internal bu
 
 🧾 License Badge  
 License: BSL-1.1  
+
+Linux and Windows Build
+
+For Visual C++ (VC) builds and Linux builds, please refer to the Android build files and create the VC project and Linux CMake files yourself.
+The codebase itself is cross-platform and does not require platform-specific modifications.
+
+Directory Structure
+
+DocReader
+A PC-side demo tool developed with Qt.
+It can run on Linux, Windows, and macOS.
+
+harmonyos
+Build and demo for the ofdpdfsigner library on Huawei HarmonyOS.
+
+android
+Build and demo for the ofdpdfsigner library on Android.
+
+ios
+Build and demo for the ofdpdfsigner library on iOS.
+
+java
+Build and demo of the ofdpdfsigner library in Java, intended for server-side use.
+
+ofdpdfsigner
+The source code of ofdpdfsigner, along with the macOS build project.
+
+webext
+Browser extensions compatible with IE6 and later, Firefox, Chrome, and other browsers.
+
+演示 (Demos)
+Demo videos and images.
