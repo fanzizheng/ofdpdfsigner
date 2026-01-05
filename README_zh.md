@@ -24,7 +24,7 @@
         pdf -》 svg  
 跨平台支持 ： windows，linux，macos。  
 移动端支持 ： ios，android，鸿蒙系统。  
-开发语言为C++，提供 C 接口、java接口（JNI接口，android 和 java语言），TS接口(鸿蒙系统)，swift接口（ios系统）.  
+开发语言为C++，提供 C 接口、java接口（JNI接口，android 和 java语言），TS接口(鸿蒙系统)，swift接口（objc 使用 swift接口）.   
 
 您有任何需求或建议，都可以联系我：fzzfzz2025@163.com。
 
@@ -35,10 +35,35 @@
 您可以在[“许可证”]（./license）文件中阅读完整的许可条款。
 ## 💼 商业许可
 如果您打算在商业环境中使用此项目（例如：内部业务工具、面向客户的产品、付费服务等），您必须获得商业许可证。
-📧 电子邮件：[fzzfzz2025@163.com。]（邮寄至：fzzfzz2025@163.com。)
+📧 电子邮件：[fzzfzz2025@163.com]
 
 ---
 ## 🧾 许可证徽章
 ！[许可证：BSL-1.1](https://img.shields.io/badge/license-BSL--1.1-blue)
+
+
+# linux编译和windows编译
+vc编译和linux编译请参考 android 的 编译文件，自行建立 vc 工程 和 linux 的 cmake 文件。代码本身是跨平台的无需单独修改 
+
+# 目录结构：
+## DocReader ： 
+pc 端的演示工具， 使用qt，可以 在 linux，windows， macos 下演示。
+## harmonyos ： 
+华为鸿蒙系统 ofdpdfsigner库编译 及 演示
+## android： 
+android系统 ofdpdfsigner库编译 及 演示
+## ios： 
+ios系统 ofdpdfsigner库编译 及 演示
+## java：
+java语言 ofdpdfsigner库编译 及 演示，用于服务器端
+## ofdpdfsigner： 
+ofdpdfsigner源码，以及 macos 系统的 编译工程。
+## webext：
+浏览器 扩展， 适用 于 ie6以上，火狐 和 chrome 等浏览器。
+## 演示： 
+演示视频及图片
+
+
+
 
 
