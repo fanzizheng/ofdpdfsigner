@@ -1,0 +1,149 @@
+/*
+ * Copyright 2011 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include "font/sfntly/subtly/utils.h"
+#if !defined WIN32
+#include <unistd.h>
+#include <sys/stat.h>
+#endif
+#include "font/sfntly/sfntly/data/growable_memory_byte_array.h"
+#include "font/sfntly/sfntly/data/memory_byte_array.h"
+#include "font/sfntly/sfntly/font.h"
+#include "font/sfntly/sfntly/font_factory.h"
+#include "font/sfntly/sfntly/port/file_input_stream.h"
+#include "font/sfntly/sfntly/port/memory_output_stream.h"
+
+//fzz add begin
+#include "font/sfntly/sfntly/port/memory_input_stream.h"
+//fzz add end
+
+namespace subtly {
+using namespace sfntly;
+//fzz add begin
+CALLER_ATTACH Font* LoadFont(const unsigned char* fontdata,int fontdatalen)
+{
+    Ptr<FontFactory> font_factory;
+    font_factory.Attach(FontFactory::GetInstance());
+    FontArray fonts;
+    LoadFonts(fontdata,fontdatalen, font_factory, &fonts);
+    return fonts[0].Detach();
+}
+
+void LoadFonts(const unsigned char* fontdata,int fontdatalen, sfntly::FontFactory* factory,
+               sfntly::FontArray* fonts)
+{
+    MemoryInputStream input_stream;
+    input_stream.Attach(fontdata, fontdatalen);
+    factory->LoadFonts(&input_stream, fonts);
+    input_stream.Close();
+}
+
+bool SerializeFont(FZZBytes & outFont, sfntly::Font* font)
+{
+    FontFactoryPtr font_factory;
+    font_factory.Attach(FontFactory::GetInstance());
+    return SerializeFont(outFont, font_factory, font);
+}
+
+bool SerializeFont(FZZBytes & outFont, sfntly::FontFactory* factory,
+                   sfntly::Font* font)
+{
+    if ( !factory || !font)
+      return false;
+    // Serializing the font to a stream.
+    MemoryOutputStream output_stream;
+    factory->SerializeFont(font, &output_stream);
+    // Serializing the stream to a file
+    outFont.setData(output_stream.Get(), output_stream.Size());
+//    for (size_t i = 0; i < output_stream.Size(); ++i) {
+//      fwrite(&(output_stream.Get()[i]), 1, 1, output_file);
+//        outFont
+//    }
+
+    return true;
+}
+//fzz add end
+CALLER_ATTACH Font* LoadFont(const char* font_path) {
+  Ptr<FontFactory> font_factory;
+  font_factory.Attach(FontFactory::GetInstance());
+  FontArray fonts;
+  LoadFonts(font_path, font_factory, &fonts);
+  return fonts[0].Detach();
+}
+
+CALLER_ATTACH Font::Builder* LoadFontBuilder(const char* font_path) {
+  FontFactoryPtr font_factory;
+  font_factory.Attach(FontFactory::GetInstance());
+  FontBuilderArray builders;
+  LoadFontBuilders(font_path, font_factory, &builders);
+  return builders[0].Detach();
+}
+
+void LoadFonts(const char* font_path, FontFactory* factory, FontArray* fonts) {
+  FileInputStream input_stream;
+  input_stream.Open(font_path);
+  factory->LoadFonts(&input_stream, fonts);
+  input_stream.Close();
+}
+
+void LoadFontBuilders(const char* font_path,
+                      FontFactory* factory,
+                      FontBuilderArray* builders) {
+  FileInputStream input_stream;
+  input_stream.Open(font_path);
+  factory->LoadFontsForBuilding(&input_stream, builders);
+  input_stream.Close();
+}
+
+bool SerializeFont(const char* font_path, Font* font) {
+  if (!font_path)
+    return false;
+  FontFactoryPtr font_factory;
+  font_factory.Attach(FontFactory::GetInstance());
+  return SerializeFont(font_path, font_factory, font);
+}
+
+bool SerializeFont(const char* font_path, FontFactory* factory, Font* font) {
+  if (!font_path || !factory || !font)
+    return false;
+  // Serializing the font to a stream.
+  MemoryOutputStream output_stream;
+  factory->SerializeFont(font, &output_stream);
+  // Serializing the stream to a file.
+  FILE* output_file = NULL;
+#if defined WIN32
+  fopen_s(&output_file, font_path, "wb");
+#else
+  std::string fontPath(font_path);
+  std::string dir = fontPath.substr(0, fontPath.find_last_of('/'));
+  //判断目录是否存在
+  if (access(dir.c_str(), F_OK) == -1) {
+    if (mkdir(dir.c_str(), 0775) == -1) {
+      return false;
+    }
+  }
+  output_file = fopen(font_path, "wb");
+#endif
+  if (output_file == reinterpret_cast<FILE*>(NULL))
+    return false;
+  for (size_t i = 0; i < output_stream.Size(); ++i) {
+    fwrite(&(output_stream.Get()[i]), 1, 1, output_file);
+  }
+  fflush(output_file);
+  fclose(output_file);
+  return true;
+}
+};
