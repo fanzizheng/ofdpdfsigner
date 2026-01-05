@@ -44,3 +44,16 @@
 
 # linux编译和windows编译
 vc编译和linux编译请参考 android 的 编译文件，自行建立 vc 工程 和 linux 的 cmake 文件。代码本身是跨平台的无需单独修改 
+# 目录结构：
+DocReader ： pc 端的演示工具， 使用qt，可以 在 linux，windows， macos 下演示。
+harmonyos ： 华为鸿蒙系统 ofdpdfsigner库编译 及 演示
+android： android系统 ofdpdfsigner库编译 及 演示
+ios： ios系统 ofdpdfsigner库编译 及 演示
+java：java语言 ofdpdfsigner库编译 及 演示，用于服务器端
+ofdpdfsigner： ofdpdfsigner源码，以及 macos 系统的 编译工程。
+webext：浏览器 扩展， 适用 于 ie6以上，火狐 和 chrome 等浏览器。
+演示： 演示视频及图片
+
+
+
+
