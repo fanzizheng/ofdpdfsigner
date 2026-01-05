@@ -1,0 +1,46 @@
+	
+{	
+	"KeyWordPosInfo":
+	[
+		{
+			"PageIndex":0,  //-1，所有页面
+			"KeyWordIndexs":
+			[
+				{
+				
+					"Index":1,  //-1，所有关键字
+					"Offset-X":0, //0,中心
+					"Offset-Y":0, //0,中心
+					
+				},
+				{
+				
+					"Index":5,
+					"Offset-X":10,
+					"Offset-Y":0,
+					
+				}
+			]
+		},
+		{
+			"PageIndex":3,
+			"KeyWordIndexs":
+			[
+				{
+				
+					"Index":2,
+					"Offset-X":0,
+					"Offset-Y":0,
+					
+				},
+				{
+				
+					"Index":4,
+					"Offset-X":10,
+					"Offset-Y":0,
+					
+				}
+			]
+		}
+	]
+}
