@@ -1,0 +1,18 @@
+# Local keys and certificates
+*.key
+*.cer
+*.crt
+*.sel
+*.p12
+*.pfx
+*.jks
+*.keystore
+sealuser*
+
+# Local seal / company stamp assets
+companystamp.png
+seal.png
+
+# Xcode user-specific data
+xcuserdata/
+*.xcuserstate
